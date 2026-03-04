@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>Weather Dashboard</h1>
+        <p>Search any city to view current weather and a 5-day forecast.</p>
+      </header>
+
+      <section class="controls card">
+        <form id="search-form" class="search-form" autocomplete="off">
+          <label for="city-input">City name</label>
+          <div class="search-row">
+            <input id="city-input" name="city" type="text" placeholder="e.g., London" required />
+            <button type="submit">Search</button>
+          </div>
+        </form>
+
+        <div class="api-key-row">
+          <label for="api-key-input">OpenWeatherMap API key</label>
+          <input id="api-key-input" type="password" placeholder="Paste your API key" />
+          <small>Your key is saved only in this browser.</small>
+        </div>
+
+        <div>
+          <h2>Recent searches</h2>
+          <ul id="history-list" class="history-list"></ul>
+        </div>
+      </section>
+
+      <section class="results">
+        <article id="current-weather" class="card weather-card hidden" aria-live="polite"></article>
+        <section id="forecast" class="forecast"></section>
+      </section>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
